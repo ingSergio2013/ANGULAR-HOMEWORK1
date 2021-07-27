@@ -1,0 +1,21 @@
+* {
+    box-sizing: border-box;
+}
+
+.box {
+    height: 100%;
+    width: 100%; 
+    font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif; 
+    color: #120e27; 
+    font-size: 18px; 
+    font-weight: 400; 
+    text-align: center; 
+    background: #eff4ff; 
+    margin: 0 0 25px; 
+    overflow: hidden; 
+    padding: 20px; 
+    border-radius: 35px 0px 35px 0px; 
+    -moz-border-radius: 35px 0px 35px 0px; 
+    -webkit-border-radius: 35px 0px 35px 0px; 
+    border: 4px solid #3c3eba;
+}

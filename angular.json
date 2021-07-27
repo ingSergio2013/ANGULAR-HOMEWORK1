@@ -1,9 +1,12 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "cli": {
+    "analytics": "dc715c3d-0962-43a3-88a9-63f0a48d722d"
+  },
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "Angular-HomeWork1": {
+    "paneles-app": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -20,7 +23,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/Angular-HomeWork1",
+            "outputPath": "dist/paneles-app",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -72,10 +75,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "Angular-HomeWork1:build:production"
+              "browserTarget": "paneles-app:build:production"
             },
             "development": {
-              "browserTarget": "Angular-HomeWork1:build:development"
+              "browserTarget": "paneles-app:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -83,7 +86,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "Angular-HomeWork1:build"
+            "browserTarget": "paneles-app:build"
           }
         },
         "test": {
@@ -107,5 +110,5 @@
       }
     }
   },
-  "defaultProject": "Angular-HomeWork1"
+  "defaultProject": "paneles-app"
 }

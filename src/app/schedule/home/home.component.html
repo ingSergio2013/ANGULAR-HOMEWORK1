@@ -1,0 +1,35 @@
+<div class="container">
+    <h1>DISEÑO DE TABLEROS</h1>
+    <div class="break"></div>
+    <div class="section" *ngFor="let panel of panels">
+        <app-titles>{{ panel.title }}</app-titles>
+        <app-panel padding="narrow">
+            <div style="margin-top: 15px;">                
+                <div *ngFor="let task of tasks">
+                    <div *ngIf="panel.id == task.status">
+                        <app-bullet>
+                            {{ task.displayText }}
+                            <br>
+                            <select [(ngModel)]="statusSeleccionado" (change)="changeTaskStatus()">
+                                <option *ngFor="let selectPanel of panels" value="{{ task.id + '_' + selectPanel.id }}"> {{ selectPanel.title }}  </option>
+                            </select>
+                        </app-bullet>
+                    </div>
+                </div>
+            </div>
+        </app-panel>
+    </div>
+</div>
+<br><br><br>
+<div class="container">
+    <div class="actions" *ngFor="let accion of acciones; let in=index">
+        <div class="box">
+            <h3>{{ accion.title }}</h3>
+            <label for="txt-tarea">Titulo: </label>
+            <input type="text" name="{{ accion.id }}" id="{{ accion.id }}"><br><br>
+            <app-button (click)="execAction(acciones[in].id)">
+                {{ accion.button }}
+            </app-button>
+        </div>        
+    </div>    
+</div>
