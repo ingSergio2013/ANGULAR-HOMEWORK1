@@ -14,20 +14,28 @@ export class HomeComponent implements OnInit {
   panels : Array<Panels> = [
     {
       id: 1,
-      title: 'Tarea Sin Catalogar'
+      title: 'Sin Catalogar',
+      button: 'Eliminar'
     },
     {
       id: 2,
-      title: 'Tarea Iniciada'
+      title: 'Iniciadas',
+      button: 'Eliminar'
     }
   ];
 
   acciones = [
     {
-      id: 1,
-      title: 'Tareas',
+      id: 1,   
+      title:'',
       button: 'Agregar nueva tarea',
       campo: 'titleTask'
+    },
+    {
+      id: 2,
+      title:'',
+      button: 'Agregar nueva columna',
+      campo: 'titlePanel'
     }
   ];
 
@@ -37,7 +45,8 @@ export class HomeComponent implements OnInit {
     {
       id: 1,
       displayText: 'Tarea inicial',
-      status: 1
+      status: 1,
+      button:'Eliminar'
     }
   ]
 
@@ -52,20 +61,39 @@ export class HomeComponent implements OnInit {
       this.newTask();
     if (accion === 2)
       this.newPanel();
+      if (accion === 3)
+      this.DelTask(accion);
   }
 
+  DelTask(id : any)
+  {
+    
+    if (id==1)
+    {
+      console.log('No se puede eliminar una Tarea sin catalogar');
+    }
+    else
+    {
+      console.log('Panel a Eliminar', id);
+      this.panels.pop()?.id;
+    }
+     
+  }
+    
   newPanel()
   {
     const lastId = this.panels.map(element => element.id),
     newId = Math.max(...lastId) + 1,
     newPanelName = (<HTMLInputElement>document.getElementById("2")).value;
+    
 
     if (newPanelName != '')
     {
       this.panels.push(
         {
           id: newId,
-          title: newPanelName
+          title: newPanelName,
+          button:'Eliminar'
         }
       );
       (<HTMLInputElement>document.getElementById("2")).value = '';
@@ -84,7 +112,8 @@ export class HomeComponent implements OnInit {
         {
           id: newId,
           displayText: newTaskName,
-          status: 1
+          status: 1,
+          button :'Eliminar'
         }
       );
 

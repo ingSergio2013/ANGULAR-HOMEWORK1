@@ -27,17 +27,22 @@
 
 .box
 { 
-    font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif; 
+    font-family: 'Times New Roman', Times, serif; 
     color: rgb(0, 0, 0); 
     font-size: 18px; 
     font-weight: 400; 
     text-align: center; 
-    background: #eff4ff; 
-    margin: 0 0 25px; 
     overflow: hidden; 
     padding: 20px; 
-    border-radius: 35px 0px 35px 0px; 
-    -moz-border-radius: 35px 0px 35px 0px; 
-    -webkit-border-radius: 35px 0px 35px 0px;
-    border: 4px solid #614caf;
+    border: 1px solid black
+}
+
+.btnDelete
+{    
+   position: fixed;
+   display: flex;  
+   align-self:  flex-end;
+   direction: rtl;
+   bottom: 15%;
+   margin-bottom: 210px;     
 }

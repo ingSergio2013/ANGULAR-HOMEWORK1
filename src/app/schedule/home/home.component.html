@@ -1,5 +1,5 @@
 <div class="container">
-    <h1>DISEÑO DE TABLEROS</h1>
+    <h2>DISEÑO DE TABLEROS</h2>
     <div class="break"></div>
     <div class="section" *ngFor="let panel of panels">
         <app-titles>{{ panel.title }}</app-titles>
@@ -12,11 +12,16 @@
                             <br>
                             <select [(ngModel)]="statusSeleccionado" (change)="changeTaskStatus()">
                                 <option *ngFor="let selectPanel of panels" value="{{ task.id + '_' + selectPanel.id }}"> {{ selectPanel.title }}  </option>
-                            </select>
-                        </app-bullet>
-                    </div>
+                            </select>                                                    
+                        </app-bullet>   
+                        <div class="btnDelete">
+                            <app-button (click)="DelTask(task.status)">Eliminar</app-button>
+                         </div>                                                                                 
+                    </div>                                           
                 </div>
-            </div>
+                
+            </div>    
+           
         </app-panel>
     </div>
 </div>
@@ -29,7 +34,7 @@
             <input type="text" name="{{ accion.id }}" id="{{ accion.id }}"><br><br>
             <app-button (click)="execAction(acciones[in].id)">
                 {{ accion.button }}
-            </app-button>
+            </app-button>           
         </div>        
     </div>    
 </div>
